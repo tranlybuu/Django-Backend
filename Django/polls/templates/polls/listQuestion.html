@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {% if question %}
+        {% for item in question %}
+            <a href="{% url 'polls:view_detail_question' item.id %}"><p style="color: blueviolet">{{ item.question_text }}</p></a>
+        {% endfor %}
+        {% else %}
+            <p style="color: red">Không có dữ liệu câu hỏi</p>
+    {% endif %}
+
+{% endblock %}

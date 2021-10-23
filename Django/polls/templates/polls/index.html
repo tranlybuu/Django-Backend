@@ -1,0 +1,18 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <div class="info">
+        <h1>Xin chào</h1>
+        <h2>Đây là <b>{{name}}</b></h2>
+    </div>
+    <div class="device">
+        <h2>Các thiết bị</h2>
+        <ul>
+            {% for item in device %}
+                {% if item != "hello" %}
+                    <li>{{item}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

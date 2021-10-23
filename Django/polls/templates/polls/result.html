@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {% if question %}
+        <h1>{{ question.question_text }}</h1>
+        <p>Số lượng vote cho các kết quả</p>
+        {% for item in question.choice_set.all %}
+            <p>{{ item.choice_text }} : <b>{{ item.vote }}</b></p>
+        {% endfor %}
+        <a href="{% url "polls:view_list_question" %}">Vote lại</a>
+    {% endif %}
+{% endblock %}
